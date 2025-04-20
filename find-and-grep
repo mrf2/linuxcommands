@@ -1,16 +1,16 @@
-grep - Searching for text inside files
+## grep - Searching for text inside files
 Basic Usage: grep "searching-text" file-name
 Recursive Search: grep -r "searching-text" /search/file/path
 Examples:
 Searching case-insensitive inside all .c files
 grep -ri --include="*.c" "main"
 
-find - Locate files
+## find - Locate files
 Syntax: find <start_path> <conditions> <action>
 Example (find all .log files in /var)
 find /var -type f -name "*.log"
 
-Use of find and grep combinedly:
+## Use of find and grep combinedly:
 find /etc -type f -name "*.conf" -exec grep -iH "Listen" {} \;
 The above command looking for all .conf files which contain "Listen" word
 
