@@ -1,22 +1,40 @@
+# grep and find - My Notes and Daily use
+
+These are my running notes while exploring how `grep` and `find` work under the hood and how I can use them effectively in daily tasks.
+
+---
 ## grep - Searching for text inside files
-Basic Usage: grep "searching-text" file-name
-Recursive Search: grep -r "searching-text" /search/file/path
-Examples:
-Searching case-insensitive inside all .c files
-grep -ri --include="*.c" "main"
+- Basic:
+  ```bash
+  grep "searching-text" file-name
 
-## find - Locate files
-Syntax: find <start_path> <conditions> <action>
-Example (find all .log files in /var)
-find /var -type f -name "*.log"
+- Recursive:
+  ```bash
+  grep -r "searching-text" /search/path
 
-## Use of find and grep combinedly:
-find /etc -type f -name "*.conf" -exec grep -iH "Listen" {} \;
-The above command looking for all .conf files which contain "Listen" word
+- Case-insensitive + filter by extension
+  ```bash
+  grep -ri --include="*.c" "main"
 
-Example: use of "find" command to find all ".c" and ".h" file from a directory recursively
-find /usr -type f \( -name "*.c" -o -name "*.h" \)
+## find - Locating files by conditions
+- Basic syntax:
+  ```bash
+  find <start_path> <conditions> <action>
+- Find all *.log* files under *`/var`*:
+  ```bash
+  find /var -type f -name "*.log"
+- Find `.c` and `.h` files:
+  ```bash
+  find /usr -type f \( -name "*.c" -o -name "*.h" \)
 
+## Using find with grep (Powerful combo)
+- Search for all `.conf` files containing ***Listen***:
+  ```bash
+  find /etc -type f -name "*.conf" -exec grep -iH "Listen" {} \;
 
+## Personal Learnings
+>- I often forget escaping parentheses `\(<space> -o <space>\)` in find - now I remember: `\( <space> \)`
+>- `exec grep -iH ...` lets me keep the filename in the output while ignoring case-sensitivity
+>- These tools help me explore unknown systems and configs deeply
 
 
