@@ -11,6 +11,7 @@ I update these notes slowly over time as I internalize patterns, debug real syst
 
 - `find-and-grep.md`  
   Notes on combining `find` and `grep` for recursive file search, filtering, and inspection. Includes real examples, syntax breakdowns, and small learnings I want to remember.
+- [grep.md](grep.md): Notes on using `grep` for searching text and files.
 
 (More entries coming as I explore each command in depth.)
 
