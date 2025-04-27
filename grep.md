@@ -7,10 +7,11 @@ Personal notes and examples on using `grep` to search text inside files and outp
 ```bash
 grep "pattern" filename
 ```
-Search for "pattern" inside `filename`.
+Search for *"pattern"* inside `filename`.
 
 ## 🛠️ Common Options
 |Option|Descripton|
+|---|---|
 |`-i`|Ignore case while matching|
 |`-r` or `-R`|Recursive search throgh directories|
 |`-n`|Show line numbers with matches|
@@ -21,7 +22,8 @@ Search for "pattern" inside `filename`.
 A word boundary means the "edge" between a word and non-word(space,punctuation, etc).
 
 |Symbol|Meaning|
-|`\b`|Word boundary(GNU grep -P mode)|
+|---|---|
+|`\b`|Word boundary(GNU `grep -P` mode)|
 |`\<`|Start of word|
 |`\>`|End of word|
 
