@@ -1,9 +1,9 @@
-# grep and find - My Notes and Daily use
+# `grep` and `find` - My Notes and Daily use
 
 These are my running notes while exploring how `grep` and `find` work under the hood and how I can use them effectively in daily tasks.
 
 ---
-## grep - Searching for text inside files
+## `grep` - Searching for text inside files
 - Basic:
   ```bash
   grep "searching-text" file-name
@@ -16,7 +16,7 @@ These are my running notes while exploring how `grep` and `find` work under the 
   ```bash
   grep -ri --include="*.c" "main"
 
-## find - Locating files by conditions
+## `find` - Locating files by conditions
 - Basic syntax:
   ```bash
   find <start_path> <conditions> <action>
@@ -27,7 +27,16 @@ These are my running notes while exploring how `grep` and `find` work under the 
   ```bash
   find /usr -type f \( -name "*.c" -o -name "*.h" \)
 
-## Using find with grep (Powerful combo)
+## `find` – Displaying all contents from matching file names with shell glob (`*`)
+```bash
+find ~/ -type f -name name* -exec sh -c 'echo "==>$1"; cat "$1"' _ {} \;
+```
+***Explannation:***
+- `sh -c` let us run a mini inline script.
+- `$1` is replaced by {}  - the placeholder for the matched file.
+- `_` is a dummy placeholder for `$0` (required by `sh -c`)
+
+## Using `find` with `grep` (Powerful combo)
 - Search for all `.conf` files containing ***Listen***:
   ```bash
   find /etc -type f -name "*.conf" -exec grep -iH "Listen" {} \;
