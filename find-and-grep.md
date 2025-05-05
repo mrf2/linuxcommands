@@ -40,6 +40,11 @@ find ~/ -type f -name name* -exec sh -c 'echo "==>$1"; cat "$1"' _ {} \;
 - Search for all `.conf` files containing ***Listen***:
   ```bash
   find /etc -type f -name "*.conf" -exec grep -iH "Listen" {} \;
+  ```
+- `find` and `grep` - Search for all `.h` files containing ***hexadecimal*** word:
+  ```bash
+    find . -type f -name "*.h" -exec grep -inH "hexadecimal" {} \;
+  ```
 
 ## Personal Learnings
 >- I often forget escaping parentheses `\(<space> -o <space>\)` in find - now I remember: `\( <space> \)`
