@@ -12,7 +12,9 @@ Search for *"pattern"* inside `filename`.
 ## 🛠️ Common Options
 |Option|Descripton|
 |---|---|
+|`-H`|Show the filename|
 |`-i`|Ignore case while matching|
+|`-o`|only print the matched part of the line|
 |`-r` or `-R`|Recursive search throgh directories|
 |`-n`|Show line numbers with matches|
 |-v|Invert match(show line *not* matching)|
