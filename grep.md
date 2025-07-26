@@ -34,3 +34,43 @@ A word boundary means the "edge" between a word and non-word(space,punctuation, 
 grep "^[[:space:]]*$" filename
 ```
 
+## `grep` File-Scope Options
+The `--include`, `--exclude`, and `--exclude-dir` options control **which files or directories** `grep` **examines** when using recursive mod (`-r` or `-R`). They are **not filters for matching content,** but **filters for file paths**.
+
+### `--include=GLOB`
+This tell `grep` to **only search files** whose names match the given glob pattern (like `*.c`, `*.h`, `file?.txt` etc.).
+ * Applies to **file names**, not content.
+ * Multiple `--include` options can be given.
+#### Syntax:
+```bash
+grep -r --include="*.c" pattern
+```
+
+### `--exclude=GLOB`
+This tell `grep` to **skip any file** whose name matches the glob pattern.
+ * Works like `--linclude`, but for **excluding** files.
+ * Multiple `--exclude` options can be used.
+
+#### Syntax:
+```bash
+grep -r --exclude="*.log" pattern
+```
+
+
+### `--exclude-dir=GLOB`
+This tell `grep` to **skip entire directories** whose names match the given pattern, including their contents.
+ * Applies to **directory names** only.
+ * Multiple `--exclude-dir` options can be specified.
+
+#### Syntax:
+```bash
+grep -r --exclude-dir=".git" pattrn
+```
+
+### Summary
+These are used **with** `-r` **or** `-R` *(recursive grep)*:
+|Option|Purpose|Example|
+|---|---|---|
+|`--include=GLOB`|Only search files matching this pattern|`--include="*.c"`|
+|`--exclude=GLOB`|Skip files matching this pattern|`--exclude="*.log"`|
+|`--exclude-dir=GLOB`|Skip *directories* matching this pattern|`--exclude-dir=".git"|
