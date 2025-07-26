@@ -73,4 +73,4 @@ These are used **with** `-r` **or** `-R` *(recursive grep)*:
 |---|---|---|
 |`--include=GLOB`|Only search files matching this pattern|`--include="*.c"`|
 |`--exclude=GLOB`|Skip files matching this pattern|`--exclude="*.log"`|
-|`--exclude-dir=GLOB`|Skip *directories* matching this pattern|`--exclude-dir=".git"|
+|`--exclude-dir=GLOB`|Skip *directories* matching this pattern|`--exclude-dir=".git"`|
