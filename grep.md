@@ -67,6 +67,12 @@ This tell `grep` to **skip entire directories** whose names match the given patt
 grep -r --exclude-dir=".git" pattrn
 ```
 
+#### Searching for Function prototypes
+```bash
+grep --include="*.h" -rnH '\bsocket.*(int'
+```
+will display function prototype of `socket` function from all header files recursively from current directory.
+
 ### Summary
 These are used **with** `-r` **or** `-R` *(recursive grep)*:
 |Option|Purpose|Example|
