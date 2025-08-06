@@ -1,0 +1,19 @@
+# `man` - an interface to the system reference manuals
+
+## SYNOPSIS
+```bash
+       man [man options] [[section] page ...] ...
+       man -k [apropos options] regexp ...
+       man -K [man options] [section] term ...
+       man -f [whatis options] page ...
+       man -l [man options] file ...
+       man -w|-W [man options] page ...
+```
+
+### `man -k`
+It is a front-end for `apropos`, which searches the **whatis database** (`/var/cache/main/index.db` or similar), which contains **one-line summaries** of manual pages.
+
+### Get True Regex Behavior
+```
+man -k . | grep -E '^ls'
+```
