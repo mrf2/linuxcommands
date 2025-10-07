@@ -92,3 +92,35 @@ cat control_files/postinst
 |`sudo apt install wireshark-common`|Install wireshark-common package|
 |`apt download wireshark-common`|Downloads a `.deb` file without installing it - useful for inspection|
 |`sudo dpkg-reconfigure wireshark-common`|Re-runs the package's configuration dialog to allow or deny non-root packet capture (update group permissions, capabilities, etc.)|
+
+## Interpreting `dpkg -l` short codes
+At the top of `dpkg -l` we often see a header like:
+```bash
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+```
+ * The leftmost two letters we see for each pakage are: **first character=*** desired action, **second charcters=** current status.
+
+ * The first three columns of the output show the desired action, the pakcage status, and errors, int that order.
+
+ * Desired Action:
+   * u = Unknown
+   * i = Install
+   * h = Hold
+   * r = remove
+   * p = Purge
+ * Package status:
+   * n = Not-installed
+   * c = Config-files
+   * H = Half-installed
+   * U = Unpacked
+   * F = Half-configured
+   * W = Triggers-awaiting
+   * t = Triggers-pending
+   * i = Installed
+ * Error flags:
+   * <empty> = (none)
+   * R = Reinst-required
+
+
