@@ -10,15 +10,16 @@ grep "pattern" filename
 Search for *"pattern"* inside `filename`.
 
 ## 🛠️ Common Options
-|Option|Descripton|
-|---|---|
-|`-H`|Show the filename|
-|`-i`|Ignore case while matching|
-|`-o`|only print the matched part of the line|
-|`-r` or `-R`|Recursive search throgh directories|
-|`-n`|Show line numbers with matches|
-|-v|Invert match(show line *not* matching)|
-|-w|Match whole words only|
+|Option|Descripton|Basic Syntax|
+|---|---|---|
+|`-A3`|The `grep -A3` command is used to **print the matching line plus 3 lines** ***After*** **it**|`grep -A3 "pattern" filename`|
+|`-H`|Show the filename||
+|`-i`|Ignore case while matching||
+|`-o`|only print the matched part of the line||
+|`-r` or `-R`|Recursive search throgh directories||
+|`-n`|Show line numbers with matches||
+|-v|Invert match(show line *not* matching)||
+|-w|Match whole words only||
 
 ## Word Boundaries
 A word boundary means the "edge" between a word and non-word(space,punctuation, etc).
@@ -80,3 +81,9 @@ These are used **with** `-r` **or** `-R` *(recursive grep)*:
 |`--include=GLOB`|Only search files matching this pattern|`--include="*.c"`|
 |`--exclude=GLOB`|Skip files matching this pattern|`--exclude="*.log"`|
 |`--exclude-dir=GLOB`|Skip *directories* matching this pattern|`--exclude-dir=".git"`|
+
+|Option|Meaning|Example|Description|
+|---|---|---|---|
+|`-A n`|After|`grep -A2 pattern file`|Show `n` lines **after** match|
+|`-B n`|Before|`grep -B2 pattern file`|Show `n` lines **before** match|
+|`-C n`|Context|`grep -C2 pattern file`|Show `n` lines **before and after** match|
