@@ -18,7 +18,7 @@ apt-file list libc6-dev
 ```
 ### Manually inspect `.deb` files;
 ```sudo apt download libc6-dev
-dpkg-db -c libc6-dev_*.deb
+dpkg-deb -c libc6-dev_*.deb
 
 # This shows full file list without installing
 ```
